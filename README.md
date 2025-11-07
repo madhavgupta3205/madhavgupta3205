@@ -27,15 +27,12 @@ A Computer Engineering student from Thapar University building **AI-powered syst
 
 ---
 
+
+
 ## 🐍 Contribution Snake (Auto-Updating)
 
-Once your GitHub Action runs, this animation updates daily.
-
-```md
 ![snake animation](https://raw.githubusercontent.com/madhavgupta3205/madhavgupta3205/output/github-contribution-grid-snake.svg)
-```
 
-![snake animation](https://raw.githubusercontent.com/madhavgupta3205/madhavgupta3205/output/github-contribution-grid-snake.svg)
 
 ---
 
