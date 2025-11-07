@@ -2,18 +2,25 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */12 * * *"   # every 12 hours
   workflow_dispatch:
+
+# crucial so the job can push to a branch
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (no persisted creds)
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
 
-      - name: Generate Snake
-        uses: Platane/snk@v3
+      - name: Generate snake SVGs
+        uses: Platane/snk/svg-only@v3
         with:
           github_user_name: madhavgupta3205
           outputs: |
@@ -25,5 +32,6 @@ jobs:
         with:
           target_branch: output
           build_dir: dist
+          commit_message: "chore: update snake"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
